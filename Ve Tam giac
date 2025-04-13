@@ -1,0 +1,58 @@
+#include<stdio.h>
+
+//Ve hinh tam giac 1    ngc 1            nguoc 2      nguoc 3
+
+*                       * * * *          ****         *
+* *                     * * *             ***        ** 
+* * *                   * *                **       ***
+* * * *                 *                   *      ****
+
+void veTamGiac(int n){
+	 int i,j;
+	 for(i = 0; i <= n; i++){
+	 	for(j = 0; j < i; j++){   // j<n-i   la nguoc
+	 		printf("* ");
+		 }
+	 printf("\n");
+	 }
+}
+
+void veTamGiac(int n){   // nguoc2
+    int i, j;
+    for(i = 0; i < n; i++){             // Duyệt qua từng dòng từ 0 đến n - 1
+        for(j = 0; j < i; j++){         // In khoảng trắng ở đầu mỗi dòng
+            printf(" ");
+        }
+        for(j = i; j < n; j++){         // In dấu * từ vị trí i đến n - 1
+            printf("*");
+        }
+        printf("\n");                  // Xuống dòng sau mỗi dòng in ra
+    }
+}
+
+🧠 Giải thích logic in từng dòng (ví dụ với n = 5):
+Dòng	Số khoảng trắng (n - i - 1)	 Số dấu * (i + 1)	Kết quả
+0	4	1	                               "  *"
+1	3	2                             	"  **"
+2	2	3	                             "  ***"
+3	1	4	                            "  ****"
+4	0	5                             	*****"
+void veTamGiac(int n){                  nguoc 3  vuong cawn phai
+	 int i,j;
+	 for(i = 0; i < n; i++){
+	 	for(j = 0; j < n - i -1; j++){    
+	 		printf(" ");
+		 }
+		 for(j = 0; j < i + 1; j++){
+			printf("*");
+		 }
+            printf("\n"); 	
+	 }
+}
+
+
+int main(){
+	int n;
+	scanf("%d",&n);
+	veTamGiac(n);
+}
