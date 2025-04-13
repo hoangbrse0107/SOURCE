@@ -1,0 +1,66 @@
+#include<stdio.h>
+
+// ve hinh vuong bi rong duoi
+/*
+
+* * * * *
+*       *
+*       *
+*       *
+*       *
+
+*/
+void veHV(int n){
+		int i,j;
+	for(i = 0; i<n;i++){
+		if(i==0){                   // i == n-1 la bi rong tren
+			for(j =0;j<n;j++){
+				printf("* ");
+			}
+		} else{
+			printf("*");
+			for( j=0;j<n-2;j++){
+				printf("  ");// 2 dau space
+			}
+			printf(" *");
+		}
+		printf("\n");
+	}
+}
+
+// ve hinh vuong bi rong giua
+/*
+* * * * *
+*       *
+*       *
+*       *
+* * * * *     
+*/
+void veHV(int n){
+		int i,j;
+	for(i = 0; i<n;i++){
+	if( i == 0 || i == n-1){
+		for(j=0;j<n;j++){
+			printf("* ");
+		}	
+	}
+	
+	else{
+		printf("*");
+		for(j=0;j<2*n-3; j++){
+			printf(" ");
+		}
+		printf("*");
+	}
+	printf("\n");
+}
+}
+
+int main(){
+	int n;
+	scanf("%d", &n);
+    veHV(n);
+}
+
+
+
