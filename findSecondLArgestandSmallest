@@ -1,0 +1,42 @@
+// tim so lon, nho thu hai trong mang
+#include<stdio.h>
+#include<stdlib.h>
+
+void findSecondLargestAndSmallest(int arr[], int size){
+	int max = arr[0];
+	int secondMax= arr[0];
+	int min = arr[0];
+	int secondMin = arr[0];
+	int i;
+	 
+	for(i=0;i< size;i++){
+		if(arr[i] > max){
+			secondMax = max;
+			max = arr[i];
+		}else if(arr[i] > secondMax && arr[i] != max){
+			secondMax = arr[i];
+		} 
+		
+		if(arr[i] < min){
+			secondMin = min;
+			min = arr[i];
+		}else if(arr[i] <secondMin && arr[i] != min){
+		
+		secondMin = arr[i];
+	}
+}
+printf("%d\n",secondMax);
+printf("%d\n",secondMin);
+}
+
+int main(){
+	int n;
+	scanf("%d",&n);
+	int *arr = (int *)malloc(n*sizeof(int));
+	int i;
+	for(i = 0; i < n; i++){
+		scanf("%d",& arr[i]);
+	}
+		findSecondLargestAndSmallest(arr,n);
+		free(arr);
+}
