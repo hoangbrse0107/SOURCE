@@ -1,0 +1,16 @@
+//dao nguoc so
+int reverse(int n){
+	int rvs = 0;
+	while(n != 0){
+		rvs = rvs * 10 + n %10;
+		n /= 10;
+	}
+	return n = rvs;
+}
+#include<stdio.h>
+
+int main(){
+	int n;
+	scanf("%d",&n);
+	printf("%d",reverse(n));
+}
